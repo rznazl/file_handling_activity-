@@ -15,3 +15,12 @@ class Life_Happenings:
         with open(self.file_name, 'w') as diary_file:
             diary_file.write('\n'.join(self.lines_to_save))
         print("\n--- File Saved Successfully ---")
+
+    def display_contents(self):
+        print(f"\nContents of {self.file_name}:")
+        try:
+            with open(self.file_name, 'r') as diary_file:
+                for line in diary_file:
+                    print(line.strip())
+        except FileNotFoundError:
+            print("Error: The file could not be found.")
