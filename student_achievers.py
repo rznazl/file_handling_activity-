@@ -37,3 +37,10 @@ class GradeAnalyzer:
         except FileNotFoundError:
             self.create_sample_student_file()
             self.load_student_data()
+
+    def get_highest_achiever(self):
+        if not self.all_students:
+            return None
+
+        top_student = min(self.all_students, key=lambda s: s.student_gwa)
+        return top_student
