@@ -29,3 +29,10 @@ class NumberSorter:
 
        even_numbers = [str(n) for n in self.number_list if n % 2 == 0]
        odd_numbers = [str(n) for n in self.number_list if n % 2 != 0]
+
+       with open('try even.txt', 'w') as even_file:
+           even_file.write('\n'.join(even_numbers))
+       with open('try odd.txt', 'w') as odd_file:
+           odd_file.write('\n'.join(odd_numbers))
+
+       print("Success! Even and Odd file generated.")
