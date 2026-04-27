@@ -24,3 +24,16 @@ class GradeAnalyzer:
         with open(self.data_file_path, 'w') as file:
             file.write("\n".join(sample_data))
         print(f"System: Created '{self.data_file_path}' with 20 student record.\n")
+
+    def load_student_data(self):
+        try:
+            with open(self.data_file_path, 'r') as file:
+                for line in file:
+                    parts = line.strip().split()
+                    if len(parts) == 2:
+                        name, gwa = parts[0], parts[1]
+                        new_student = StudentRecord(name, gwa)
+                        self.all_students.append(new_student)
+        except FileNotFoundError:
+            self.create_sample_student_file()
+            self.load_student_data()
