@@ -21,3 +21,11 @@ class NumberSorter:
             print(f"Error: {self.input_file_path} not found. Now creating...")
             self.create_sample_file()
             self.load_numbers_from_file()
+
+    def split_and_save_numbers(self):
+       if not self.number_list:
+           print("No numbers given to process.")
+           return
+
+       even_numbers = [str(n) for n in self.number_list if n % 2 == 0]
+       odd_numbers = [str(n) for n in self.number_list if n % 2 != 0]
