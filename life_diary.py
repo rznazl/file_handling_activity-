@@ -11,3 +11,7 @@ class Life_Happenings:
             choice = input("Do you anything more to say? ").strip().lower()
             if choice == 'no':
                 break
+
+        with open(self.file_name, 'w') as diary_file:
+            diary_file.write('\n'.join(self.lines_to_save))
+        print("\n--- File Saved Successfully ---")
