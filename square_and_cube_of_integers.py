@@ -32,6 +32,9 @@ class IntegerProcessor:
                 result = num ** 3
                 odd_cube_results.append(str(result))
 
-    def save_results(self, file_name, data_list):
-        with open(file_name, 'w') as output_file:
+        self.save_results('double.txt', even_square_results)
+        self.save_results('triple.txt', odd_cube_results)
+
+    def save_results(self, filename, data_list):
+        with open(filename, 'w') as output_file:
             output_file.write("\n".join(data_list))
