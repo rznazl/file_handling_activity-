@@ -19,3 +19,17 @@ class IntegerProcessor:
         except FileNotFoundError:
             self.create_initial_file()
             self.load_data()
+
+    def process_math_operations(self):
+        even_square_results = []
+        odd_cube_results = []
+
+        for num in self.numbers:
+            if num % 2 == 0:
+                result = num ** 2
+                even_square_results.append(str(result))
+            else:
+                result = num ** 3
+                odd_cube_results.append(str(result))
+
+
