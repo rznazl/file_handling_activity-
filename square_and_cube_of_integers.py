@@ -3,4 +3,12 @@ class IntegerProcessor:
         self.source_file = source_file
         self.number = []
 
+    def create_initial_file(self):
+        sample_integers = [
+            "2", "3", "4", "5", "10", "7", "8", "9", "12", "11",
+            "6", "13", "14", "15", "20", "17", "18" "19", "28", "21"
+        ]
+        with open(self.source_file, 'w') as file:
+            file.write("\n".join(sample_integers))
+        print(f"System: Created '{self.source_file}' with 20 integers.\n")
         
