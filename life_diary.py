@@ -1,4 +1,4 @@
-class Life_Happenings:
+class LifeHappenings:
     def __init__(self, file_name):
         self.file_name = file_name
         self.lines_to_save = []
@@ -24,3 +24,7 @@ class Life_Happenings:
                     print(line.strip())
         except FileNotFoundError:
             print("Error: The file could not be found.")
+
+my_life_recorder = LifeHappenings('mylife.txt')
+my_life_recorder.collect_and_save()
+my_life_recorder.display_contents()
