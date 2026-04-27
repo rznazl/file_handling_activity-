@@ -36,3 +36,7 @@ class NumberSorter:
            odd_file.write('\n'.join(odd_numbers))
 
        print("Success! Even and Odd file generated.")
+
+number_processor = NumberSorter('numbers.txt')
+number_processor.load_numbers_from_file()
+number_processor.split_and_save_numbers()
