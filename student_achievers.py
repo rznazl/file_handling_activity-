@@ -11,7 +11,7 @@ class GradeAnalyzer:
         self.data_file_path = data_file_path
         self.all_students = []
 
-    def create_sample_atudent_file(self):
+    def create_sample_student_file(self):
         sample_data = [
             "April_Delos_Reyes 1.25", "Rexine_Dimaranan 1.00", "Valerie Landicho 1.50",
             "Jienella_Lumilan 1.10", "Kaycee_Mero 2.25", "Ghiro_Reyes 1.40",
@@ -44,3 +44,11 @@ class GradeAnalyzer:
 
         top_student = min(self.all_students, key=lambda s: s.student_gwa)
         return top_student
+
+analyzer = GradeAnalyzer('students.txt')
+analyzer.load_student_data()
+winner = analyzer.get_highest_achiever()
+
+if winner:
+    print("TOP STUDENTS RESULT")
+    print(f"The top student is {winner}.")
