@@ -50,5 +50,5 @@ analyzer.load_student_data()
 winner = analyzer.get_highest_achiever()
 
 if winner:
-    print("TOP STUDENTS RESULT")
+    print("TOP STUDENT RESULT")
     print(f"The top student is {winner}.")
